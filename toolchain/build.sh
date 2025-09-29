@@ -14,7 +14,7 @@ source ../.common.env
 #######################################################################################################################
 # create docker image for toolchain files
 
-docker build --build-arg=GROUP_ID=$(id -g) --build-arg=USER_ID=$(id -u) -t mpb-toolchain .
+docker build --build-arg=GROUP_ID=$(id -g) --build-arg=USER_ID=$(id -u) -t ghcr.io/carlosperate/microbit-toolchain .
 
 #######################################################################################################################
 # make sure workdir exists before we try to map it
@@ -24,7 +24,7 @@ mkdir -p ${WORKDIR}
 #######################################################################################################################
 # build the toolchain
 
-docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm mpb-toolchain:latest ./bootstrap.sh ${PLAT} toolchain
+docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm mghcr.io/carlosperate/microbit-toolchain:latest ./bootstrap.sh ${PLAT} toolchain
 
 #######################################################################################################################
 # cleanup crosstool-ng files, which can get quite big
