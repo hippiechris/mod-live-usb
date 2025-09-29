@@ -24,7 +24,7 @@ mkdir -p ${WORKDIR}
 #######################################################################################################################
 # build the toolchain
 
-docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm mghcr.io/carlosperate/microbit-toolchain:latest ./bootstrap.sh ${PLAT} toolchain
+docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm ghcr.io/carlosperate/microbit-toolchain:latest ./bootstrap.sh ${PLAT} toolchain
 
 #######################################################################################################################
 # cleanup crosstool-ng files, which can get quite big
