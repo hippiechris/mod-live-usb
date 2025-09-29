@@ -31,7 +31,7 @@ fi
 #######################################################################################################################
 # build full boostrap
 
-docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm mpb-toolchain:latest ./bootstrap.sh ${PLAT}
+docker run -v ${WORKDIR}:/home/builder/mod-workdir --rm ghcr.io/carlosperate/microbit-toolchain:latest ./bootstrap.sh ${PLAT}
 
 #######################################################################################################################
 # mark as done
